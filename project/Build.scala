@@ -47,10 +47,11 @@ object YinYangBuild extends Build {
       "org.scalatest" % "scalatest_2.10" % "2.0.M6-SNAP7" % "test",
       "junit" % "junit" % "4.8.1" % "test" // we need JUnit explicitly
     )),
-
+    
     // add the macro paradise compiler plugin
+    addCompilerPlugin("test.org" % "printplugin_2.10" % "1.0"),
     addCompilerPlugin("org.scala-lang.plugins" % "macro-paradise_2.10.2" % "2.0.0-SNAPSHOT"),
-
+    scalacOptions in ThisBuild += "-P:printplugin:oversrc",
     // add scalac options (verbose deprecation warnings)
     scalacOptions ++= Seq("-deprecation", "-feature"),
 
