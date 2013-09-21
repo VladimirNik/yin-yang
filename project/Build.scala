@@ -49,7 +49,7 @@ object YinYangBuild extends Build {
     )),
     
     // add the macro paradise compiler plugin
-    addCompilerPlugin("test.org" % "printplugin_2.10" % "1.0"),
+    addCompilerPlugin("org.scala-lang.plugins" %% "printplugin" % "0.2.0"),
     addCompilerPlugin("org.scala-lang.plugins" % "macro-paradise_2.10.2" % "2.0.0-SNAPSHOT"),
     scalacOptions in ThisBuild += "-P:printplugin:oversrc",
     // add scalac options (verbose deprecation warnings)
